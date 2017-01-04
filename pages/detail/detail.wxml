@@ -1,0 +1,35 @@
+<import src="../../wxParse/wxParse.wxml"/> 
+<!--标题信息-->
+<view class="titleView">
+    <text class="title">{{article.title}}</text>
+    <view>
+        <text class="date">{{article.date}}</text>
+        <text class="cnt">阅读：{{article.read_cnt}}</text>
+    </view>
+</view>
+<!--正文-->
+<view class="content">
+    <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+</view>
+<!--评论区-->
+<view class="commentView">
+    <view wx:if="{{commentList}}">
+        <view class="comment" wx:for="{{commentList}}">
+            <view class="avatar">
+                <image src="{{item.avatar}}" mode="scaleToFill"></image>
+            </view>
+            <view class="commentInfo">
+                <view class="userName">{{item.username}}<view class="time">{{item.time}}</view></view>
+                <view class="commentContent"><text class="reply" wx:if="{{item.parent_username}}">回复@{{item.parent_username}}：</text>{{item.content}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="noComment" wx:else>
+        <text>暂无评论，赶快抢沙发吧！</text>
+    </view>
+</view>
+<!--评论框-->
+<view class="commentBar">
+    <input class="commentInput" bindinput="onTextChanged" placeholder="发表你的评论吧..."/>
+    <text class="sendButton" bindtap="onSendClicked">发表</text>
+</view>

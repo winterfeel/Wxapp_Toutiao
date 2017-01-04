@@ -1,0 +1,97 @@
+/**index.wxss**/
+.segments{
+  width:100%;
+  height:35px;
+  background: #f6f6f6;
+  white-space: nowrap;
+  font-size:15px;
+  position: fixed;
+  top: 0;
+  z-index:1;
+}
+
+.section{
+  width:20%;
+  height:100%;
+  text-align: center;
+  color:#000;
+  display: inline-block;
+  line-height: 35px;
+}
+
+.section.active{
+  color:#d43d3d;
+}
+
+.articles{
+  margin-top: 35px;
+  width: 100%;
+  height: 100%;
+}
+
+.article{
+  padding: 8px 8px;
+  border-bottom: 1px dashed #eee;
+}
+
+.article::after{
+    content:"";
+    clear:both;
+    position:absoult;
+    height:0;
+}
+
+.article:last-child{
+    border-bottom: none;
+}
+
+.left{
+    float:left;
+    width: 67%;
+    height: 80px;
+    position:relative;
+}
+
+.title{
+    font-size:18px;
+}
+
+.subTitle{
+    font-size: 15px;
+    color:#aaa;
+}
+
+.date{
+    position:absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.date text{
+    color:#aaa;
+    padding-right : 5px;
+    font-size : 12px;
+}
+
+.cnt{
+  position:absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.cnt text{
+    color:#aaa;
+    padding-right : 5px;
+    font-size : 12px;
+}
+
+.right{
+    float:right;
+    width: 30%;
+}
+
+.right image{
+    width: 100%;
+    height: 80px;
+    display: block;
+}

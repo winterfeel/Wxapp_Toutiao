@@ -1,0 +1,12 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/detail/detail"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#d43d3d",
+    "navigationBarTitleText": "灯灯头条",
+    "navigationBarTextStyle":"white"
+  }
+}

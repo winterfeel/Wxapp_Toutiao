@@ -1,0 +1,33 @@
+<loading hidden="{{hidden}}">
+    加载中...
+</loading>
+<!--头部分类-->
+<scroll-view class="segments" scroll-x="true">
+  <view wx:for="{{sections}}" class="section {{item.active ? 'active' : ''}}" data-sid="{{item.section_id}}" bindtap="onSectionClicked">
+    <text>{{item.name}}</text>
+  </view>
+</scroll-view>
+<!--文章列表-->
+<view class="articles">
+  <view wx:for="{{articles}}" class="article" data-aid="{{item.article_id}}" bindtap="onArticleClicked">
+            <view class="left">
+                <view class="title">
+                    {{item.title}}
+                </view>
+                <view class="subTitle">
+                    
+                </view>
+                <view class="date">
+                    <text>{{item.date}}</text>
+                </view>
+                <view class="cnt">
+                    <text>评论({{item.comment_cnt}})</text>
+                </view>
+            </view>
+            <view class="right">
+                <image src="{{item.cover1}}"/>
+            </view>
+            <view style="clear:both"></view>
+        </view>
+</view>
+
